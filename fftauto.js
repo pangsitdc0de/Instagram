@@ -9,7 +9,7 @@ const User = [
 	{
 		type:'input',
 		name:'username',
-		message:'Insert Username',
+		message:'Username Lo',
 		validate: function(value){
 			if(!value) return 'Can\'t Empty';
 			return true;
@@ -18,8 +18,8 @@ const User = [
 	{
 		type:'password',
 		name:'password',
-		message:'Insert Password',
-		mask:'*',
+		message:'Password Lo',
+		mask:'8',
 		validate: function(value){
 			if(!value) return 'Can\'t Empty';
 			return true;
@@ -28,7 +28,7 @@ const User = [
 	{
 		type:'input',
 		name:'target',
-		message:'Insert Username Target (Without @[at])',
+		message:' Lo Cari Korban Lo yang followernya banyak @[at])',
 		validate: function(value){
 			if(!value) return 'Can\'t Empty';
 			return true;
@@ -46,7 +46,7 @@ const User = [
 	{
 		type:'input',
 		name:'sleep',
-		message:'Insert Sleep (In MiliSeconds)',
+		message:'No Sleep Night (560000 MilliSecond )',
 		validate: function(value){
 			value = value.match(/[0-9]/);
 			if (value) return true;
@@ -143,7 +143,7 @@ const CommentAndLike = async function(session, accountId, text){
 		const printLike = Like ? chalk`{green Like}` : chalk`{red Like}`;
 		return chalk`{bold.green ${printFollow},${printComment},${printLike} [${text}]}`;
 	}
-	return chalk`{bold.cyan Timeline Kosong (SKIPPED)}`
+	return chalk`{bold.cyan Beranda Kosong (Los IN Aje)}`
 };
 
 const Followers = async function(session, id){
@@ -167,9 +167,9 @@ const Followers = async function(session, id){
 
 const Excute = async function(User, TargetUsername, Text, Sleep){
 	try {
-		console.log(chalk`{yellow \n | Try to Login .....}`)
+		console.log(chalk`{yellow \n | Sedang Login Mek .....}`)
 		const doLogin = await Login(User);
-		console.log(chalk`{green  | Login Succsess, try to get Followers Target ....}`)
+		console.log(chalk`{green  | Login Succses dher. Ngopi yuksss ....}`)
 		const getTarget = await Target(TargetUsername);
 		console.log(chalk`{green  | ${TargetUsername}[${getTarget.id}] Followers: ${getTarget.followers}}`)
 		const getFollowers = await Followers(doLogin.session, doLogin.account.id)
@@ -187,7 +187,7 @@ const Excute = async function(User, TargetUsername, Text, Sleep){
 						const ngeDo = await CommentAndLike(doLogin.session, akun.id, ranText)
 						console.log(chalk`{bold.green [>]}${akun.params.username} => ${ngeDo}`)
 					} else {
-						console.log(chalk`{bold.yellow [SKIPPED]}${akun.params.username} => PRIVATE OR ALREADY FOLLOWED`)
+						console.log(chalk`{bold.yellow [Los In Aje]}${akun.params.username} => Segala diKunci kan KNTL`)
 					}
 				}));
 				console.log(chalk`{yellow Delay For ${Sleep} MiliSeconds}`);
@@ -204,8 +204,8 @@ const Excute = async function(User, TargetUsername, Text, Sleep){
 
 console.log(chalk`
 {bold Instagram FFT Auto Comment, Auto Like, Auto Follow}
-{green HACKER PATAH HATI - LEMESIN AKU DONG OM  - PALING SAKIT AKU DIGINIIN OM}
-{bold.red Code By OpangWongka@hakcer.patahhati | OpangWongka@hakcer.patahhati}
+{green NoMoneyNoLife. CrazyFriends404.NewYear2k18.}
+{bold.red Code By pangsitdc0de - pangsitdc0de@outlook.com}
 `);
 
 inquirer.prompt(User)
