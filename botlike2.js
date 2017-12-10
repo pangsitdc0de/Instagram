@@ -1,9 +1,9 @@
 'use strict'
 
-/** BOT LIKE **/
-/** Code By OpangWongka@hakcer.patahhati | OpangWongka@hakcer.patahhati **/
-/** OpangWongka@hakcer **/
-/** HACKER PATAH HATI - LEMESIN AKU DONG OM  - PALING SAKIT AKU DIGINIIN OM **/
+/** BOT LIKE Instagram V.2 **/
+/** Code By PangsitDc0de **/
+/** pangsitdc0de@outlook.com **/
+/** NewYear2k18 | NoMoneyNoLife | CrazyFriends404 | AKAMSIE. Pauwa **/
 
 const Client = require('instagram-private-api').V1;
 const delay = require('delay');
@@ -14,7 +14,7 @@ const User = [
     {
         type:'input',
         name:'username',
-        message:'Insert Username',
+        message:'username Lo',
 	validate: function(value){
 		if(!value) return 'Can\'t Empty';
 		return true;
@@ -23,7 +23,7 @@ const User = [
     {
         type:'password',
         name:'password',
-        message:'Insert Password',
+        message:'Password Lo',
         mask:'*',
 	validate: function(value){
 		if(!value) return 'Can\'t Empty';
@@ -70,8 +70,8 @@ const Timeline = async function(session,count,cursor){
             getCursor = await feed.getCursor();
             await Timeline(session,count,getCursor);
         } else {
-            console.log('[-] Repeat from scratch (Delay 60s)');
-            await delay(60000);
+            console.lg('[-] 3 menit aja ngocok keluar (Delay 180s)');
+            await delay(1800000);
             count=0;
             await Timeline(session,count);
         }
@@ -107,9 +107,9 @@ const Excute = async function(User){
 }
 
 console.log(chalk`
-{bold Instagram BOT LIKE v2}
-{green BC0DE.NET - NAONLAH.NET - WingKocoli}
-{bold.red Code By Ccocot | ccocot@bc0de.net}
+{bold BOT LIKE Instagram V.2}
+{green NoMoneyNoLife - CrazyFriends404 - NewYear2k18 - AKAMSIE.Pauwa}
+{bold.red Code By pangsitdc0de | pangsitdc0de.outlook.com}
 `);
 
 inquirer.prompt(User)
