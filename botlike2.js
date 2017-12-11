@@ -24,7 +24,7 @@ const User = [
         type:'password',
         name:'password',
         message:'Password Lo',
-        mask:'*',
+        mask:'8',
 	validate: function(value){
 		if(!value) return 'Can\'t Empty';
 		return true;
