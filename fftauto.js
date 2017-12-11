@@ -179,7 +179,7 @@ const Excute = async function(User, TargetUsername, Text, Sleep){
 		do {
 			if (TargetCursor) Targetfeed.setCursor(TargetCursor);
 			var TargetResult = await Targetfeed.get();
-			TargetResult = _.chunk(TargetResult, 5);
+			TargetResult = _.chunk(TargetResult, 10);
 			for (let i = 0; i < TargetResult.length; i++) {
 				await Promise.all(TargetResult[i].map(async(akun) => {
 					if (!getFollowers.includes(akun.id) && akun.params.isPrivate === false) {
