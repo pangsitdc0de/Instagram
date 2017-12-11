@@ -35,7 +35,7 @@ const User = [
     {
         type:'input',
         name:'sleep',
-        message:'Berapa Menit (In MiliSeconds)',
+        message:'Waktu Yang Diinginkan (Reccomend 40000)',
         validate: function(value){
             value = value.match(/[0-9]/);
             if (value) return true;
@@ -64,7 +64,7 @@ const Login = async function(User){
 const Like = async function(session,media){
     try {
         if (media.params.hasLiked) {
-           return chalk`{bold.blue Udah Ada}`;
+           return chalk`{bold.blue Udah Lo Like}`;
         }
         await Client.Like.create(session, media.id);
         return chalk`{bold.green Topcer}`;
@@ -77,13 +77,13 @@ const Excute = async function(User, sleep){
     try {
         console.log(chalk`\n{yellow [?] Sedang Login Mek ....}`);
         const doLogin = await Login(User);
-        console.log(chalk`{green [+] Login Succsess mek}, {yellow Thanks Meme Script ....}`);
+        console.log(chalk`{green [+] Login Succsess mek}, {yellow Dilarang Ketawa Sebelum Ketawa itu dilarang ....}`);
         const feed = new Client.Feed.Timeline(doLogin.session);
         var cursor;
         do {
             if (cursor) feed.setCursor(cursor);
             var media = await feed.get();
-            media = _.chunk(media, 5);
+            media = _.chunk(media, 10);
             for (var i = 0; i < media.length; i++) {
                 await Promise.all(media[i].map(async (media) => {
                     const doLike = await Like(doLogin.session, media);
