@@ -46,7 +46,7 @@ const User = [
 	{
 		type:'input',
 		name:'sleep',
-		message:'No Sleep Night (560000 MilliSecond )',
+		message:'Waktu Yang Diinginkan (Reccomend 480000 MemekSecond )',
 		validate: function(value){
 			value = value.match(/[0-9]/);
 			if (value) return true;
@@ -204,7 +204,7 @@ const Excute = async function(User, TargetUsername, Text, Sleep){
 
 console.log(chalk`
 {bold Instagram FFT Auto Comment, Auto Like, Auto Follow}
-{green NoMoneyNoLife. CrazyFriends404.NewYear2k18.}
+{green NoMoneyNoLife. CrazyFriends404.NewYear2k18.AKAMSIE.Pauwa}
 {bold.red Code By pangsitdc0de - pangsitdc0de@outlook.com}
 `);
 
