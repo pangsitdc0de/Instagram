@@ -1,9 +1,9 @@
 'use strict'
 
 /** Auto Delete Media Instagram **/
-/** CODE BY CCOCOT | CCOCOT.CO **/
-/** ccocot@bc0de.net **/
-/** BC0DE.NET - NAONLAH.NET - WingKocoli **/
+/** CODE By pangsitDc0de **/
+/** Pangsitdc0de@outlook.com **/
+/** BNoMoneyNoLive - CrazyFriends404 - NewYear2k18 | AKAMSI.Pauwa **/
 
 const Client = require('instagram-private-api').V1;
 const delay = require('delay');
@@ -15,18 +15,18 @@ const User = [
 	{
 		type:'input',
 		name:'username',
-		message:'Insert Username'
+		message:'Username Lo'
 	},
 	{
 		type:'password',
 		name:'password',
-		message:'Insert Password',
-		mask:'*'
+		message:'Password Lo',
+		mask:'8'
 	},
 	{
 		type:'input',
 		name:'sleep',
-		message:'Insert Sleep (In MiliSeconds)',
+		message:'Waktu yang Diingingkan (In MiliSeconds)',
 		validate: function(value){
 			value = value.match(/[0-9]/);
 			if (value) return true;
@@ -88,19 +88,19 @@ const Excute = async function(User,sleep){
 	try {
 		
 		/** TRY TO LOGIN **/
-		console.log('\n[?] Try to login ..');
+		console.log('\n[?] Sedang Login Mek ..');
 		const doLogin = await Login(User);
-		console.log(chalk`{bold.green [+] Login Succsess}`);
+		console.log(chalk`{bold.green [+] Login Succsess Mending Kita sholat dulu}`);
 
 		/** TRY TO GET ALL MEDIA **/		
-		console.log('[?] Try to get media ..')
+		console.log('[?] Ini lagi check photo lu jelek apa kaga ..')
 		var getMedia = await Media(doLogin.session, doLogin.account.id);
-		console.log(chalk`{bold.green [+] Succsess to get Media. Media Length : ${getMedia.length}}\n`);
-		getMedia = _.chunk(getMedia, 5);
+		console.log(chalk`{bold.green [+] Eh Sukses Ke photo Jelek lo. Media Length : ${getMedia.length}}\n`);
+		getMedia = _.chunk(getMedia, 10);
 
 		/** TRY TO DELETE ALL MEDIA **/
 		for (let i = 0; i < getMedia.length; i++) {
-			console.log('[?] Try to delete 5 photo\n')
+			console.log('[?] Bakal Lo Bonus Yang Jelek\n')
 			await Promise.all(getMedia[i].map(async(media) => {
 				const doDelete = await Delete(doLogin.session, media.id);
 				const PrintOut = chalk`> ${media.link} => ${doDelete ? chalk`{bold.green Sukses}` : chalk`{bold.red Gagal}`}`
@@ -117,8 +117,8 @@ const Excute = async function(User,sleep){
 
 console.log(chalk`
 {bold Instagram Auto Delete Media}
-{green BC0DE.NET - NAONLAH.NET - WingKocoli}
-{bold.red Code By Ccocot | ccocot@bc0de.net}
+{green NoMoneyNoLive - CrazyFriends404 - NewYear2k18 | AKAMSI.Pauwa}
+{bold.red Code By pangsitDc0de}
 `);
 inquirer.prompt(User)
 	.then(answers => {
