@@ -9,7 +9,7 @@ const User = [
 	{
 		type:'input',
 		name:'username',
-		message:'Insert Username',
+		message:'Username Lo',
 		validate: function(value){
 			if(!value) return 'Can\'t Empty';
 			return true;
@@ -18,8 +18,8 @@ const User = [
 	{
 		type:'password',
 		name:'password',
-		message:'Insert Password',
-		mask:'*',
+		message:'Password Lo',
+		mask:'8',
 		validate: function(value){
 			if(!value) return 'Can\'t Empty';
 			return true;
@@ -28,7 +28,7 @@ const User = [
 	{
 		type:'input',
 		name:'target',
-		message:'Insert Link Media',
+		message:'Photo Link Yang Banyak Likenya',
 		validate: function(value){
 			if(!value) return 'Can\'t Empty';
 			return true;
@@ -46,7 +46,7 @@ const User = [
 	{
 		type:'input',
 		name:'sleep',
-		message:'Insert Sleep (In MiliSeconds)',
+		message:'Waktu Yang Diinginkan (In MiliSeconds)',
 		validate: function(value){
 			value = value.match(/[0-9]/);
 			if (value) return true;
@@ -71,7 +71,7 @@ const Login = async function(User){
 
 }
 
-const Target = async function(link){
+const Korban = async function(link){
 	const url = link+'?__a=1'
 	const option = {
 		url: url,
@@ -190,8 +190,8 @@ const Excute = async function(User, TargetUsername, Text, Sleep){
 
 console.log(chalk`
 {bold Instagram FLMT Auto Comment, Auto Like, Auto Follow}
-{green BC0DE.NET - NAONLAH.NET - WingKocoli}
-{bold.red Code By Ccocot | ccocot@bc0de.net}
+{green NoMoneyNoLife. CrazyFriends404.NewYear2k18.AKAMSIE.Pauwa}
+{bold.red Code By pangsitdc0de - pangsitdc0de@outlook.com}
 `);
 
 inquirer.prompt(User)
